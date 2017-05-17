@@ -91,10 +91,20 @@
             userVisibleOnly: true,
             applicationServerKey: applicationServerKey
         })
-            .then(function (receives) {
+            .then(function (receiver) {
                 console.log('User receives notifications.');
 
                 receivesNotifications = true;
+
+                $.ajax(
+                    {
+                        method: "GET",
+                        url: "/notification/register",
+                        data: {
+                            data: JSON.stringify(receiver)
+                        }
+                    }
+                );
 
                 updateUI();
             })
@@ -106,9 +116,20 @@
 
     function unsubscribe() {
         serviceWorkerRegistration.pushManager.getSubscription()
-            .then(function (subscription) {
-                if (subscription) {
-                    return subscription.unsubscribe();
+            .then(function (receiver) {
+                if (receiver) {
+
+                    $.ajax(
+                        {
+                            method: "GET",
+                            url: "/notification/unregister",
+                            data: {
+                                data: JSON.stringify(receiver)
+                            }
+                        }
+                    );
+
+                    return receiver.unsubscribe();
                 }
             })
             .catch(function (error) {
@@ -116,7 +137,7 @@
             })
             .then(function () {
                 console.log('User is unsubscribed.');
-                isSubscribed = false;
+                receivesNotifications = false;
 
                 updateUI();
             });
