@@ -1,0 +1,14 @@
+{
+  "name": "Web App Manifest Generator",
+  "short_name": "ManiGen",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/media/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

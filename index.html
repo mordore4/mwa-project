@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="author" content="Sam Demeulenaere"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="manifest" href="assets/manifest/manifest.json">
+    <link rel="stylesheet" href="assets/css/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/screen.css" type="text/css"/>
+</head>
+<body>
+<div class="pusher">
+    <header class="ui inverted vertical masthead center aligned segment">
+        <h1 class="ui inverted header">
+            Web App Manifest Generator
+        </h1>
+        <aside class="ui text container">
+            <p>Mobile web apps are a fairly new technology that is still under development. Chances are that this technology
+                will change a lot in the coming time. please also note that there might be compatibility issues with some
+                browsers. <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility">compatibility
+                    table.</a> Please read <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">the official
+                    documentation</a> for more information about this technology.</p>
+        </aside>
+    </header>
+    <section class="ui container">
+        <form action="" autocomplete="off" class="ui form">
+
+            <div class="field required">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="field required">
+                <label for="short_name">Short name</label>
+                <input type="text" id="short_name" name="short_name">
+            </div>
+
+            <div class="field required">
+                <label for="start_url">Start URL</label>
+                <input type="text" id="start_url" name="start_url">
+            </div>
+
+            <div class="ui field grid form-field">
+
+                <div class="sixteen wide field required">
+                    <label>Icon</label>
+                </div>
+
+                <div class="six wide field">
+                    <label for="icons-src">URL</label>
+                    <input type="text" id="icons-src" name="icons-src">
+                </div>
+
+                <div class="five wide field">
+                    <label for="icons-sizes">Size</label>
+                    <input type="text" id="icons-sizes" name="icons-sizes">
+                </div>
+
+                <div class="five wide field">
+                    <label for="icons-type">Type</label>
+                    <input type="text" id="icons-type" name="icons-type">
+                </div>
+
+            </div>
+
+            <div class="field">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description">
+            </div>
+
+            <div class="field">
+                <label for="lang">Language</label>
+                <input type="text" id="lang" name="lang">
+            </div>
+
+            <div class="field">
+                <label for="scope">Scope</label>
+                <input type="text" id="scope" name="scope">
+            </div>
+
+            <div class="field">
+                <label for="theme_color">Theme color</label>
+                <input type="text" id="theme_color" name="theme_color">
+            </div>
+
+            <div class="field">
+                <label for="background_color">Background color</label>
+                <input type="text" id="background_color" name="background_color">
+            </div>
+
+            <div class="grouped fields">
+                <label>Display</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="display" value="standalone" id="standalone">
+                        <label for="standalone">Standalone</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="display" value="fullscreen" id="fullscreen">
+                        <label for="fullscreen">Fullscreen</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="display" value="minimal-ui" id="minimal-ui">
+                        <label for="minimal-ui">Minimal UI</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="display" value="browser" id="browser">
+                        <label for="browser">Browser</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui form">
+                <div class="field">
+                    <label>Orientation</label>
+                    <select class="ui search dropdown" id="orientation" name="orientation">
+                        <option value="">Select orientation</option>
+                        <option value="any">Any</option>
+                        <option value="natural">Natural</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="landscape-primary">Landscape-primary</option>
+                        <option value="landscape-secondary">Landscape-secondary</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="portrait-primary">Portrait-primary</option>
+                        <option value="portrait-secondary">Portrait-secondary</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="ui field grid form-field">
+                <div class="sixteen wide field required">
+                    <label>Related application</label>
+                </div>
+
+                <div class="six wide field">
+                    <label for="related_applications-platform">Platform</label>
+                    <input type="text" id="related_applications-platform" name="related_applications-platform">
+                </div>
+
+                <div class="five wide field">
+                    <label for="related_applications-id">App ID</label>
+                    <input type="text" id="related_applications-id" name="related_applications-id">
+                </div>
+
+                <div class="five wide field">
+                    <label for="related_applications-url">URL</label>
+                    <input type="text" id="related_applications-url" name="related_applications-url">
+                </div>
+
+                <div class="sixteen wide field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="prefer_related_applications" id="prefer_related_applications">
+                        <label for="prefer_related_applications">Prefer related applications</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui field grid form-field">
+
+                <div class="sixteen wide field required">
+                    <label>Screenshot</label>
+                </div>
+
+                <div class="six wide field">
+                    <label for="screenshots-src">URL</label>
+                    <input type="text" id="screenshots-src" name="screenshots-src">
+                </div>
+
+                <div class="five wide field">
+                    <label for="screenshots-sizes">Size</label>
+                    <input type="text" id="screenshots-sizes" name="screenshots-sizes">
+                </div>
+
+                <div class="five wide field">
+                    <label for="screenshots-type">Type</label>
+                    <input type="text" id="screenshots-type" name="screenshots-type">
+                </div>
+
+            </div>
+
+        </form>
+        <article class="generated-content container">
+            <h2>manifest.json</h2>
+            <pre id="manifest">
+
+            </pre>
+        </article>
+    </section>
+    <footer>
+
+    </footer>
+</div>
+
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/semantic.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+</html>
