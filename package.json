@@ -1,0 +1,22 @@
+{
+  "name": "mwa-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mordore4/mwa-project.git"
+  },
+  "author": "sam demeulenaere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mordore4/mwa-project/issues"
+  },
+  "homepage": "https://github.com/mordore4/mwa-project#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
