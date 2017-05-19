@@ -1,4 +1,4 @@
-const version = 1;
+const version = 4;
 
 self.addEventListener("install", function (event) {
     console.log("ManiGen v%s installed", version)

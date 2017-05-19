@@ -18,6 +18,21 @@ select{
 .generated-content{
     border: solid red 3px;
     border-radius: .28571429rem;
+    position: relative;
+}
+
+#copy_clipboard{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+h2{
+    margin-top: 1rem;
+}
+
+.manifest{
+    margin-left: 1rem;
 }
 
 form{
