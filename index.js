@@ -29,7 +29,7 @@ function sendNotification(message) {
     });
 }
 
-app.get("/notification/register", function (req, res, next) {
+app.get("/notification/register", function (req, res, next) { //db would be easier, but desided against it for ease of use
     var receiver = JSON.parse(req.query.data);
     receivers.push(receiver);
 
@@ -62,9 +62,9 @@ app.get("/notification/unregister", function (req, res, next) {
 server.listen(process.env.PORT || 3000);
 app.use(express.static(__dirname + "/public"));
 
-app.get("/notification/send", function (req, res, next) {
+app.get("/notification/send", function (req, res, next) { //could be done way safer, but for ease of use I did it like this for now
     var message  = req.query.message;
     sendNotification(message);
 
-    //res.send(true);
+    res.send("<h1>" + message + " was sent to everyone</h1>");
 });
