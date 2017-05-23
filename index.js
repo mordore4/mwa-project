@@ -62,6 +62,10 @@ app.get("/notification/unregister", function (req, res, next) {
 server.listen(process.env.PORT || 3000);
 app.use(express.static(__dirname + "/public"));
 
+
+// If you go to https://mwa-project.herokuapp.com/notification/send?message=https://developer.mozilla.org/en-US/docs/Web/Manifest
+// Everyone will receive a notification that links to official documentation of manifests.
+// If you go there a second time you will have to clear cache for it to work again.
 app.get("/notification/send", function (req, res, next) { //could be done way safer, but for ease of use I did it like this for now
     var message  = req.query.message;
     sendNotification(message);

@@ -1,20 +1,40 @@
-const version = 5;
+const version = ["v8"];
 
 self.addEventListener("install", function (event) {
+    event.waitUntil(
+        caches.open(version).then(function (cache) {
+            return cache.addAll([
+                "/",
+                "/index.html",
+                "/assets/css/screen.css",
+                "/assets/css/semantic.min.css",
+                "/assets/js/script.js",
+                "/assets/js/semantic.min.js",
+                "/assets/media/icon.png",
+                "/assets/fonts/icons.eot",
+                "/assets/fonts/icons.otf",
+                "/assets/fonts/icons.svg",
+                "/assets/fonts/icons.ttf",
+                "/assets/fonts/icons.woff",
+                "/assets/fonts/icons.woff2"
+            ])
+        })
+    );
     console.log("ManiGen v%s installed", version)
 });
 
 self.addEventListener("activate", function (event) {
-    console.log("ManiGen v%s activated", version);
+    console.log("ManiGen v%s activated", version[0]);
     event.waitUntil(
         caches.keys()
             .then(function (keys) {
-                return Promise.all(keys.filter(function (key) {
-                    return key !== version;
-                }).map(function (key) {
-                    return caches.delete(key);
-                }))
-            }));
+                return Promise.all(keys.map(function(key) {
+                    if (version.indexOf(key) === -1) {
+                        return caches.delete(key);
+                    }
+                }));
+            })
+    );
 });
 
 self.addEventListener("fetch", function (event) {
@@ -24,10 +44,10 @@ self.addEventListener("fetch", function (event) {
                 if(res)
                     return res;
 
-                if (!navigator.onLine)
-                    return Promise.all(function () {
-                        event.respondWith(new Response("<h1>you're offline</h1>"))
-                    });
+                else if (!navigator.onLine)
+                    return new Response("<h1>you're offline</h1>", {
+                        headers: { "Content-Type": "text/html" }});
+
 
                 return fetchAndUpdate(event.request);
             }));
